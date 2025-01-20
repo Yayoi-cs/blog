@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="tsune"
+                 name="tsune"
+                 start-page="starter.md">
+
+    <toc-element topic="starter.md"/>
+    <toc-element topic="picoCTF2024-Writeup.md">
+        <toc-element topic="Web-Exploitation.md"/>
+        <toc-element topic="Cryptography.md"/>
+        <toc-element topic="Reverse-Engineering.md"/>
+        <toc-element topic="General-Skills.md"/>
+        <toc-element topic="Forensics.md"/>
+        <toc-element topic="Binary.md"/>
+    </toc-element>
+    <toc-element topic="uiuctf2024.md"/>
+    <toc-element topic="Imaginary-CTF.md"/>
+    <toc-element topic="Lit-CTF.md"/>
+    <toc-element topic="UrmiaCTF-2024.md"/>
+    <toc-element topic="helloWorld.md"/>
+    <toc-element topic="N00bzCTF-2024.md"/>
+    <toc-element topic="UofT-CTF-2024.md"/>
+</instance-profile>
