@@ -7,6 +7,9 @@
                  start-page="starter.md">
 
     <toc-element topic="starter.md"/>
+    <toc-element topic="upsolves.md">
+        <toc-element topic="Kinderheim-511.md"/>
+    </toc-element>
     <toc-element topic="picoCTF2024-Writeup.md">
         <toc-element topic="Web-Exploitation.md"/>
         <toc-element topic="Cryptography.md"/>
