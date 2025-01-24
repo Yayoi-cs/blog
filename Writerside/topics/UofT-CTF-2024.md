@@ -1,4 +1,4 @@
-# UofT CTF 2024
+# UofT CTF 2025
 
 ## baby-pwn
 ### challenge1
