@@ -106,5 +106,3 @@ p.send(payload)
 
 p.interactive()
 ```
-
-

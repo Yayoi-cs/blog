@@ -26,4 +26,6 @@
     <toc-element topic="helloWorld.md"/>
     <toc-element topic="N00bzCTF-2024.md"/>
     <toc-element topic="UofT-CTF-2024.md"/>
+    <toc-element topic="AlpacaHack-Round8.md"/>
+    <toc-element topic="godb.md"/>
 </instance-profile>
