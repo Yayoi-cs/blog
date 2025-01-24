@@ -2,7 +2,7 @@
 
 ## challenge information
 
-Surdnlen CTF 2024: [challenge](https://ctf.srdnlen.it/challenges#challenge-14)
+Surdnlen CTF 2025: [challenge](https://ctf.srdnlen.it/challenges#challenge-14)
 `pwn userland`
 
 ## analysis

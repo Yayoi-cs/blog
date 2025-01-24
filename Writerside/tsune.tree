@@ -8,6 +8,7 @@
 
     <toc-element topic="starter.md"/>
     <toc-element topic="upsolves.md">
+        <toc-element topic="Anodic-Music.md"/>
         <toc-element topic="Kinderheim-511.md"/>
         <toc-element topic="Snowstorm.md"/>
     </toc-element>

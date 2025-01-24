@@ -1,7 +1,7 @@
 # Kinderheim 511
 
 ## challenge information
-Surdnlen CTF 2024: [challenge](https://ctf.srdnlen.it/challenges#challenge-13)
+Surdnlen CTF 2025: [challenge](https://ctf.srdnlen.it/challenges#challenge-13)
 
 `pwn heap 59 solves`
 > Long live the expo. No wait, I mixed that one up.
