@@ -2,9 +2,8 @@
 
 [LACTF](https://platform.lac.tf/) was one of the most fantastic ctf I've played ever.
 
-Unfortunately, I cannot spend enough time to solve challenges.
-
-I solved 4 reversing challenges, 2 pwn challenges in last few hours.
+Unfortunately, I could not spend enough time to solve challenges.
+I solved 4 reversing challenges, 2 pwn challenges in the last few hours of CTF competition.
 
 ## 2password (pwn, userland)
 As we can see, there's a format-string-bug in main function. 
@@ -81,7 +80,7 @@ int main(){
     state = 0xdeaddead;
 ```
 the exploit flow is pivoting the stack and then call fgets() in "vuln" again.
-Calling fgets with broken rbp which pointed to .got region for example allow us to overwrite into arbitrary address.
+Calling fgets with broken rbp which pointed to .data region for example allow us to overwrite into arbitrary address.
 ```bash
 gef> disass vuln 
 Dump of assembler code for function vuln:
