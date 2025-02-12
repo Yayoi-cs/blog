@@ -6,6 +6,7 @@
     <variables></variables>
     <build-profile instance="tsune">
         <variables>
+            <primary-color>aqua</primary-color>
             <noindex-content>true</noindex-content>
         </variables>
     </build-profile>
