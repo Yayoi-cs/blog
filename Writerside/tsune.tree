@@ -14,6 +14,7 @@
         <toc-element topic="Snowstorm.md">
         </toc-element>
         <toc-element topic="Kinderheim-511.md"/>
+        <toc-element topic="game-dev.md"/>
     </toc-element>
     <toc-element topic="picoCTF2024-Writeup.md">
         <toc-element topic="Web-Exploitation.md"/>

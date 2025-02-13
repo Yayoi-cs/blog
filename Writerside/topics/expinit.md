@@ -22,8 +22,8 @@ import subprocess
 import termios
 import tty
 
-default_libc = "/usr/lib/x86_64-linux-gnu/libc.so.6"
-default_ld = "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2"
+libc = "/usr/lib/x86_64-linux-gnu/libc.so.6"
+ld = "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2"
 
 def isElf(fp):
     try:
@@ -84,11 +84,10 @@ if __name__ == "__main__":
             case "n":
                 continue
 
-    libc = ""
     if len(elfs["libc"]) == 0:
-        match gc(f"using default libc:{default_libc}"):
+        match gc(f"using default libc:{libc}"):
             case "y":
-                libc = default_libc
+                libc = libc
             case "n":
                 libc = ""
     else:
@@ -100,11 +99,10 @@ if __name__ == "__main__":
                 case "n":
                     continue
 
-    ld = ""
     if len(elfs["ld"]) == 0:
-        match gc(f"using default ld:{default_libc}"):
+        match gc(f"using default ld:{ld}"):
             case "y":
-                ld = default_ld
+                ld = ld 
             case "n":
                 ld = ""
     else:
@@ -130,11 +128,11 @@ if __name__ == "__main__":
             PORT = int(nc.split(" ")[1])
     else:
         print(f"✅ using default config (127.0.0.1:9999)")
-
+    
     swaplist = {
-        "__ELFPATH":elf.split("/")[-1],
-        "__LIBCPATH":libc.split("/")[-1],
-        "__LDPATH":ld.split("/")[-1],
+        "__ELFPATH":elf.replace(chaldir+"/",""),
+        "__LIBCPATH":libc.replace(chaldir+"/",""),
+        "__LDPATH":ld.replace(chaldir+"/",""),
         "__HOST":HOST,
         "__PORT":str(PORT)
     }
@@ -160,7 +158,6 @@ if __name__ == "__main__":
                 os.system(f"{v} {elf} &")
 
     print("✅ finish!")
-
 ```
 
 ## exploit outline
@@ -168,9 +165,9 @@ if __name__ == "__main__":
 from pwn import *
 import sys
 
-e = ELF("__ELFPATH")
-libc = ELF("__LIBCPATH")
-ld = ELF("__LDPATH")
+e = ELF("__ELFPATH",checksec=False)
+libc = ELF("__LIBCPATH",checksec=False)
+ld = ELF("__LDPATH",checksec=False)
 
 nc = "nc __HOST __PORT"
 HOST = nc.split(" ")[1]
@@ -182,7 +179,6 @@ g_script = """
 """
 
 context.binary = e
-log.level = "debug"
 if len(sys.argv) > 1:
     io = remote(host=HOST,port=PORT)
 else:
@@ -201,5 +197,9 @@ pu32= lambda b : u32(b.ljust(4,b"\0"))
 pu64= lambda b : u64(b.ljust(8,b"\0"))
 hlog= lambda i : print(f"[*]{hex(i)}")
 shell = lambda : io.interactive()
-
+payload = b""
+def pay64(adr:int):global payload;payload = p64(adr)
+def add64(adr:int):global payload;payload+= p64(adr)
+def paybyte(data:bytes):global payload;payload = data
+def addbyte(data:bytes):global payload;payload+= data
 ```
