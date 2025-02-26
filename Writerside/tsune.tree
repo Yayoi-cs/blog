@@ -17,6 +17,10 @@
         <toc-element topic="game-dev.md"/>
         <toc-element topic="minceraft.md"/>
     </toc-element>
+    <toc-element topic="technique.md">
+        <toc-element topic="tcache-poisning-under-safe-linking.md"/>
+        <toc-element topic="studying-kernel-exploit.md"/>
+    </toc-element>
     <toc-element topic="picoCTF2024-Writeup.md">
         <toc-element topic="Web-Exploitation.md"/>
         <toc-element topic="Cryptography.md"/>
@@ -36,4 +40,5 @@
     <toc-element topic="godb.md"/>
     <toc-element topic="LACTF2025.md"/>
     <toc-element topic="expinit.md"/>
+    <toc-element topic="cpio-tool.md"/>
 </instance-profile>
