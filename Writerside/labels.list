@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE labels SYSTEM "https://resources.jetbrains.com/writerside/1.0/labels-list.dtd">
+<labels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/labels.xsd">
+    <primary-label id="label" short-name="L" name="Label">
+        This is an example label
+    </primary-label>
+
+    <primary-label id="jetbrains" short-name="JB" name="JetBrains" href="https://www.jetbrains.com" color="red">
+        Go to www.jetbrains.com
+    </primary-label>
+
+    <primary-label id="kernel" short-name="KNL" name="Kernel" color="blue">
+        kernel exploit
+    </primary-label>
+
+    <primary-label id="userland" short-name="UL" name="UserLand" color="strawberry">
+        UserLand Exploit
+    </primary-label>
+
+
+    <primary-label id="misc" short-name="MISC" name="Misc" color="strawberry">
+        MISC
+    </primary-label>
+
+    <primary-label id="web" short-name="WEB" name="WEB" color="tangerine">
+        WEB EXPLOITATION
+    </primary-label>
+
+    <primary-label id="pwn" short-name="PWN" name="PWN" color="blue">
+        BINARY EXPLOITATION
+    </primary-label>
+
+     <primary-label id="rev" short-name="REV" name="REV" color="purple">
+         REVERSING
+    </primary-label>
+
+     <primary-label id="cry" short-name="CRY" name="CRY" color="red">
+         CRYPTOGRAPHY
+    </primary-label>
+
+    <primary-label id="misc" short-name="MISC" name="Misc" color="strawberry">
+        UserLand Exploit
+    </primary-label>
+
+    <secondary-label id="user" name="USERLAND" color="strawberry">USERLAND</secondary-label>
+    <secondary-label id="kernel" name="KERNEL" color="blue">KERNEL</secondary-label>
+    <secondary-label id="lpe" name="LPE" color="purple">LPE</secondary-label>
+    <secondary-label id="rce" name="RCE" color="tangerine">RCE</secondary-label>
+    <secondary-label id="no-smep" name="no-smep" color="strawberry">❌smep</secondary-label>
+    <secondary-label id="no-smap" name="no-smap" color="strawberry">❌smap</secondary-label>
+    <secondary-label id="no-kpti" name="no-kpti" color="strawberry">❌kpti</secondary-label>
+    <secondary-label id="no-ibt" name="no-IBT" color="strawberry">❌IBT</secondary-label>
+    <secondary-label id="no-shstk" name="no-SHSTK" color="strawberry">❌SHSTK</secondary-label>
+
+    <secondary-label id="experimental" name="Experimental" color="purple">This is an experimental feature</secondary-label>
+    <secondary-label id="2023.3" name="2023.3" color="blue">New in version 2023.3</secondary-label>
+</labels>

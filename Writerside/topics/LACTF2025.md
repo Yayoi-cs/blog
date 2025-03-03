@@ -5,7 +5,9 @@
 Unfortunately, I could not spend enough time to solve challenges.
 I solved 4 reversing challenges, 2 pwn challenges in the last few hours of CTF competition.
 
-## 2password (pwn, userland)
+## 2password
+<primary-label ref="pwn"/>
+<secondary-label ref="user"/>
 As we can see, there's a format-string-bug in main function. 
 ```c
 int main(void) {
@@ -48,7 +50,9 @@ flag = bytes.fromhex(little).decode()[::-1]
 print(f"{flag=}")
 ```
 
-## stage-change (pwn, userland)
+## stage-change
+<primary-label ref="pwn"/>
+<secondary-label ref="user"/>
 There's a buffer-overflow vulnerability in "vuln".
 ```c
 void vuln(){
@@ -127,6 +131,8 @@ p.interactive()
 ```
 
 ## javascription (rev, javascript)
+<primary-label ref="rev"/>
+
 the challenge
 ```js
 const msg = document.getElementById("msg");
@@ -159,6 +165,8 @@ checkBtn.addEventListener("click", () => {
 solved with cyber chief: [](https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,false)URL_Decode()Find_/_Replace(%7B'option':'Simple%20string','string':'%5BOLD_DATA%5D'%7D,'Z',true,false,true,false)Reverse('Character')From_Base64('A-Za-z0-9%2B/%3D',true,false)&input=SlRORUpUTkVVV1pzU2xnbE5VSlBURVJmUkVGVVFTVTFSRzg1TVdOemVGZFpNemxXWlhOd2JtVndTak1sTlVKUFRFUmZSRUZVUVNVMVJHWTViV0kzSlRWQ1QweEVYMFJCVkVFbE5VUkhaR3BHUjJJPQ&oeol=VT)
 
 ## nine-solves(rev, elf)
+<primary-label ref="rev"/>
+
 decompile with ida.
 ```c
 int __fastcall main(int argc, const char **argv, const char **envp)
@@ -241,6 +249,7 @@ print(''.join(result))
 ```
 
 ## patrics(rev, elf)
+<primary-label ref="rev"/>
 the main function.
 
 ![Screenshot_20250210_234306.png](Screenshot_20250210_234306.png)
@@ -291,6 +300,7 @@ print(f"{flag=}")
 ```
 
 ## the-eye(rev, elf)
+<primary-label ref="rev"/>
 the main function.
 ```c
 int __fastcall main(int argc, const char **argv, const char **envp)
