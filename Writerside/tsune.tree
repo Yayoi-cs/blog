@@ -6,7 +6,6 @@
                  name="tsune"
                  start-page="starter.md">
 
-    <toc-element topic="AlpacaHack-seccon-background.md"/>
     <toc-element topic="starter.md"/>
     <toc-element topic="upsolves.md">
         <toc-element topic="The-Kudryavka-Sequence.md"/>
@@ -42,4 +41,5 @@
     <toc-element topic="LACTF2025.md"/>
     <toc-element topic="expinit.md"/>
     <toc-element topic="cpio-tool.md"/>
+    <toc-element topic="AlpacaHack-seccon-background.md"/>
 </instance-profile>

@@ -569,7 +569,7 @@ shell()
 
 * rust:cry:
 * 4 threads launched in this challenge.
-* 4 threads construct the string in parallel, break at `std::thread::Builder::spawn_unchecked::hc4b5f0da48ddb8b5` with following script with gdb.
+* 4 threads construct the string in parallel, break at `std::thread::Builder::spawn_unchecked::hc4b5f0da48ddb8b5` using gdb with following script.
 
 ```sh
 set mi-async on
