@@ -48,6 +48,7 @@
     <secondary-label id="kernel" name="KERNEL" color="blue">KERNEL</secondary-label>
     <secondary-label id="lpe" name="LPE" color="purple">LPE</secondary-label>
     <secondary-label id="rce" name="RCE" color="tangerine">RCE</secondary-label>
+    <secondary-label id="aarw" name="AAR/W" color="red">AAR/W</secondary-label>
     <secondary-label id="no-smep" name="no-smep" color="strawberry">❌smep</secondary-label>
     <secondary-label id="no-smap" name="no-smap" color="strawberry">❌smap</secondary-label>
     <secondary-label id="no-kpti" name="no-kpti" color="strawberry">❌kpti</secondary-label>
