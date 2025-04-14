@@ -54,6 +54,8 @@
     <secondary-label id="no-kpti" name="no-kpti" color="strawberry">❌kpti</secondary-label>
     <secondary-label id="no-ibt" name="no-IBT" color="strawberry">❌IBT</secondary-label>
     <secondary-label id="no-shstk" name="no-SHSTK" color="strawberry">❌SHSTK</secondary-label>
+    <secondary-label id="rdi" name="rdi" color="strawberry">rdi</secondary-label>
+    <secondary-label id="rsi" name="rsi" color="strawberry">rsi</secondary-label>
 
     <secondary-label id="experimental" name="Experimental" color="purple">This is an experimental feature</secondary-label>
     <secondary-label id="2023.3" name="2023.3" color="blue">New in version 2023.3</secondary-label>
