@@ -16,6 +16,12 @@
         <toc-element topic="Kinderheim-511.md"/>
         <toc-element topic="game-dev.md"/>
         <toc-element topic="minceraft.md"/>
+        <toc-element topic="kbuf.md"/>
+        <toc-element topic="giraffe.md"/>
+        <toc-element topic="easy-kernel.md"/>
+        <toc-element topic="xcache.md"/>
+        <toc-element topic="new-era.md"/>
+        <toc-element topic="pew.md"/>
     </toc-element>
     <toc-element topic="technique.md">
         <toc-element topic="tcache-poisning-under-safe-linking.md"/>
@@ -47,4 +53,5 @@
     </toc-element>
     <toc-element topic="Libc-got-overwrite.md"/>
     <toc-element topic="Midnight-CTF-2025.md"/>
+    <toc-element topic="findruction.md"/>
 </instance-profile>
