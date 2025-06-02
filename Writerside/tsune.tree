@@ -6,7 +6,6 @@
                  name="tsune"
                  start-page="starter.md">
 
-    <toc-element topic="GreyCTF-2025.md"/>
     <toc-element topic="starter.md"/>
     <toc-element topic="upsolves.md">
         <toc-element topic="The-Kudryavka-Sequence.md"/>
@@ -55,4 +54,5 @@
     <toc-element topic="Libc-got-overwrite.md"/>
     <toc-element topic="Midnight-CTF-2025.md"/>
     <toc-element topic="findruction.md"/>
+    <toc-element topic="GreyCTF-2025.md"/>
 </instance-profile>
