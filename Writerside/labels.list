@@ -32,6 +32,10 @@
         BINARY EXPLOITATION
     </primary-label>
 
+    <primary-label id="BLOCK CHAIN" short-name="BLC" name="BLOCK CHAIN" color="red">
+        BLOCK CHAIN
+    </primary-label>
+
      <primary-label id="rev" short-name="REV" name="REV" color="purple">
          REVERSING
     </primary-label>

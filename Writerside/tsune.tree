@@ -53,6 +53,7 @@
     </toc-element>
     <toc-element topic="Libc-got-overwrite.md"/>
     <toc-element topic="Midnight-CTF-2025.md"/>
+    <toc-element topic="Midnight-CTF-2025-Final.md"/>
     <toc-element topic="findruction.md"/>
     <toc-element topic="GreyCTF-2025.md"/>
 </instance-profile>
