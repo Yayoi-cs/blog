@@ -163,6 +163,12 @@ void free_msg(struct msg_msg *msg)
 }
 ```
 
+## capability
+* heap spray
+  * arbitrary-size kmalloc cache spray.
+* aar/w
+  * if `MSG_COPY` is available, falsifying `m_ts` and `next` let us arbitrary address read, write. Content of next pointer address must be NULL to unlink successfully.
+
 ## helper
 
 ```c
