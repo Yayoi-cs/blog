@@ -94,7 +94,7 @@ len(data) == 0x2000 > 0xfd0
 
 ## allocate
 msg_msg uses different allocators before and after Linux 6.11.
-otherwise, msg_msgseg use kmalloc for all version.
+on the other hand, msg_msgseg use kmalloc for all version.
 ### before Linux 6.11
 [](https://elixir.bootlin.com/linux/v6.6.94/source/ipc/msgutil.c#L53)
 ```C
@@ -168,6 +168,7 @@ void free_msg(struct msg_msg *msg)
   * arbitrary-size kmalloc cache spray.
 * aar/w
   * if `MSG_COPY` is available, falsifying `m_ts` and `next` let us arbitrary address read, write. Content of next pointer address must be NULL to unlink successfully.
+  * resources: [](https://www.cnblogs.com/pwnfeifei/p/16643533.html), [](https://blog.csdn.net/qq_61670993/article/details/134760017)
 
 ## helper
 
