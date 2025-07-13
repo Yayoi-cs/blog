@@ -22,8 +22,14 @@
         <toc-element topic="xcache.md"/>
         <toc-element topic="new-era.md"/>
         <toc-element topic="pew.md"/>
+        <toc-element topic="bkernel.md"/>
+    </toc-element>
+    <toc-element topic="kernel-structure.md">
+        <toc-element topic="msg-msg.md"/>
+        <toc-element topic="pipe-buffer.md"/>
     </toc-element>
     <toc-element topic="technique.md">
+        <toc-element topic="v8-tips.md"/>
         <toc-element topic="tcache-poisning-under-safe-linking.md"/>
         <toc-element topic="studying-kernel-exploit.md"/>
     </toc-element>
