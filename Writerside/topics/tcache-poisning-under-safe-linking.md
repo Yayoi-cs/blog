@@ -57,13 +57,13 @@ Consider two tcache bin entries for the 0x90-size bin (tcache index 7):
    0x5fa7451e97f0: 0x4343434343434343 0x4343434343434343
 ```
 Focus on the pointer at address `0x5fa7451e97e0`, which stores the safe-linked value `0x00005fa2bf6ac6b9`. According to our macro, this value should be computed as:
-$$ 0x00005fa2bf6ac6b9 = (0x5fa7451e97e0 >> 12) \oplus 0x5fa7451e9750 $$
+$$ 0x00005fa2bf6ac6b9 = (heap base >> 12) \oplus 0x5fa7451e9750 $$
 
 ## tcache-poisoning
 
-For example, by rewriting the next pointer of the chunk at `heap_base+0x1750` as shown below, you can force malloc to allocate memory at the location of `_IO_list_all`.
+For example, by rewriting the next pointer of the chunk at `heap_base` as shown below, you can force malloc to allocate memory at the location of `_IO_list_all`.
 ```py
-(heap_base+0x1750 >> 12)^libc.sym["_IO_list_all"]
+(heap_base >> 12)^libc.sym["_IO_list_all"]
 ```
 
 When we apply this change, the last bin in the tcache will point to libc’s `_IO_list_all`, as shown in the picture.
