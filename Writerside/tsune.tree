@@ -29,12 +29,23 @@
         <toc-element topic="pipe-buffer.md"/>
     </toc-element>
     <toc-element topic="technique.md">
+        <toc-element topic="super-computer-tips.md"/>
+        <toc-element topic="A64Fx-knowledge.md"/>
+        <toc-element topic="aarch64-knowledge.md"/>
         <toc-element topic="go-for-pwn.md"/>
         <toc-element topic="v8-tips.md"/>
         <toc-element topic="tcache-poisning-under-safe-linking.md"/>
         <toc-element topic="studying-kernel-exploit.md"/>
     </toc-element>
     <toc-element topic="Advent-Calender-2025.md">
+        <toc-element topic="2025-18.md"/>
+        <toc-element topic="2025-17.md"/>
+        <toc-element topic="2025-16.md"/>
+        <toc-element topic="2025-15.md"/>
+        <toc-element topic="2025-14.md"/>
+        <toc-element topic="2025-13.md"/>
+        <toc-element topic="2025-12.md"/>
+        <toc-element topic="2025-11.md"/>
         <toc-element topic="2025-10.md"/>
         <toc-element topic="2025-9.md"/>
         <toc-element topic="2025-8.md"/>
