@@ -42,7 +42,7 @@ Sunday: pwn
 | CSAW CTF: celestrial cafeteria     | uaf                         | pwn      | medium      | [](2025-14.md)              |
 | N1 CTF: ktou                       | race condition, kernel      | pwn      | medium      | [](2025-15.md)              |
 | N1 CTF: nipple                     | tbd                         | pwn      | hard        | [](2025-16.md)              |
-| SECCON CTF: Make a Rop Great Again | stack bof                   | pwn      | medium      | [](2025-17.md)              |
+| SECCON CTF: Make a Rop Great Again | stack bof                   | pwn      | hard        | [](2025-17.md)              |
 | SECCON CTF: baby qemu              | vm escape                   | pwn      | medium      | [](2025-18.md)              |
 
 ## template
