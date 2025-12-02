@@ -29,6 +29,7 @@
         <toc-element topic="pipe-buffer.md"/>
     </toc-element>
     <toc-element topic="technique.md">
+        <toc-element topic="cross-cache.md"/>
         <toc-element topic="super-computer-tips.md"/>
         <toc-element topic="A64Fx-knowledge.md"/>
         <toc-element topic="aarch64-knowledge.md"/>
