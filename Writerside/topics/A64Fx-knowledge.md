@@ -1,5 +1,14 @@
 # A64Fx knowledge
 
+[アドカレ6日目](https://qiita.com/advent-calendar/2025/nit_kisarazu)
+
+- 前回
+  - [なんか、仮想マシンで簡易的な競プロローカルサーバ作りたくね？　その1](https://qiita.com/Wing2C1/items/6b3a522803a0fc8eaab4) by @Wing2C1
+  - 今後も続いていくシリーズっぽいので次が楽しみですね
+- 前々回
+  - [The 8th APAC HPC-AI Competition参加記](https://zenn.dev/chizuchizu/articles/7e77fe8d44244b)
+  - The 8th APAC HPC-AI Competitionには私も同じチームで参加していました. ぜひ読みに行ってください
+
 こんにちは, 18歳学生です. 自己紹介は他のブログを観察してください.
 
 1人アドベントカレンダーも開催しています. [](Advent-Calender-2025.md)
@@ -150,6 +159,5 @@ A64Fxでは`movprfx`命令が最適化されている(p14,p32. [A64FX_Microarchi
 - [](https://arxiv.org/pdf/1803.06185)
 - [](https://aijishu.com/a/1060000000350714)
 - [](https://lxjk.github.io/2020/02/07/Fast-4x4-Matrix-Inverse-with-SSE-SIMD-Explained-JP.html)
-
 
 
