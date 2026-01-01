@@ -8,7 +8,9 @@ Surdnlen CTF 2025: [challenge](https://ctf.srdnlen.it/challenges#challenge-14)
 ## analysis
 * vulnerability
   * there is a buffer overflow vulnerability in `ask_length()`.
+  
   ![Screenshot_20250122_221434.png](Screenshot_20250122_221434.png)
+   
   * if the string was formatted in Hex, `strtol` return the decimal value.
   * in this case, we can bypass the size restriction by input hex value, 0x40.
 * exploit plan
@@ -40,6 +42,7 @@ Stripped:   No
    0x00000000004015d1 <+103>:   call   0x401160
 ```
 * mapping address in .got region
+
 ![Screenshot_20250122_223117.png](Screenshot_20250122_223117.png)
 
 ## solver

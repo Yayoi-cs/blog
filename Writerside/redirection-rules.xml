@@ -10,4 +10,16 @@
         <description><![CDATA[Created after removal of "<fsop.md>" from tsune]]></description>
         <accepts>fsop.html</accepts>
     </rule>
+    <rule id="288f9b6f">
+        <description><![CDATA[Created after removal of "<favorite-challenge-2025.md>" from tsune]]></description>
+        <accepts>favorite-challenge-2025.html</accepts>
+    </rule>
+    <rule id="6d718b73">
+        <description><![CDATA[Created after removal of "<ctf-meme.md>" from tsune]]></description>
+        <accepts>ctf-meme.html</accepts>
+    </rule>
+    <rule id="25d5291a">
+        <description>Created after removal of "codegate-2025-Final" from tsune</description>
+        <accepts>codegate-2025-Final.html</accepts>
+    </rule>
 </rules>
