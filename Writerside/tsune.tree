@@ -91,5 +91,8 @@
     <toc-element topic="fastDbg.md"/>
     <toc-element topic="TSG-CTF-2025.md"/>
     <toc-element topic="Scarlet-CTF-2026.md"/>
-    <toc-element topic="LACTF2026.md"/>
+    <toc-element topic="pascal-ctf-2026.md"/>
+    <toc-element topic="LACTF2026.md">
+    </toc-element>
+    <toc-element topic="srdnlen-ctf-2026.md"/>
 </instance-profile>

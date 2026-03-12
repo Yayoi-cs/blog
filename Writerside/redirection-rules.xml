@@ -22,4 +22,8 @@
         <description>Created after removal of "codegate-2025-Final" from tsune</description>
         <accepts>codegate-2025-Final.html</accepts>
     </rule>
+    <rule id="2b008ca7">
+        <description>Created after removal of "最悪なコンペティションについて." from tsune</description>
+        <accepts>About-terrible-competition.html</accepts>
+    </rule>
 </rules>
