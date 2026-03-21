@@ -31,6 +31,7 @@
     <toc-element topic="technique.md">
         <toc-element topic="cross-cache.md"/>
         <toc-element topic="super-computer-tips.md"/>
+        <toc-element topic="use-gpu-on-colab.md"/>
         <toc-element topic="A64Fx-knowledge.md"/>
         <toc-element topic="aarch64-knowledge.md"/>
         <toc-element topic="go-for-pwn.md"/>
