@@ -19,6 +19,9 @@
         UserLand Exploit
     </primary-label>
 
+    <primary-label id="0-day" short-name="0-day" name="0day">
+        0-day
+    </primary-label>
 
     <primary-label id="misc" short-name="MISC" name="Misc" color="strawberry">
         MISC
@@ -48,6 +51,8 @@
         UserLand Exploit
     </primary-label>
 
+    <secondary-label id="rce" name="rce" color="strawberry">RCE</secondary-label>
+    <secondary-label id="sandbox-escape" name="sandbox-escape" color="strawberry">Sandbox Escape</secondary-label>
     <secondary-label id="user" name="USERLAND" color="strawberry">USERLAND</secondary-label>
     <secondary-label id="kernel" name="KERNEL" color="blue">KERNEL</secondary-label>
     <secondary-label id="lpe" name="LPE" color="purple">LPE</secondary-label>

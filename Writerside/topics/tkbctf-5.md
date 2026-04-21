@@ -4,7 +4,7 @@ I participated [tkbctf5](https://alpacahack.com/ctfs/tkbctf5) with 0xL4ugh.
 
 We got 3rd place with 4161 pts.
 
-I solved 4 pwn challenges + 1 crypto challenge.
+I solved 5 pwn challenges + 1 crypto challenge.
 
 ![Screenshot_20260315_141454.png](Screenshot_20260315_141454.png)
 
