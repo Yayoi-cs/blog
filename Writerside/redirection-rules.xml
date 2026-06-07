@@ -26,4 +26,9 @@
         <description>Created after removal of "最悪なコンペティションについて." from tsune</description>
         <accepts>About-terrible-competition.html</accepts>
     </rule>
+    <rule id="c2ab091">
+        <description>
+            <![CDATA[Created after removal of "<AI-doesn-t-have-its-heart-right.md>" from tsune]]></description>
+        <accepts>AI-doesn-t-have-its-heart-right.html</accepts>
+    </rule>
 </rules>

@@ -29,6 +29,7 @@
         <toc-element topic="pipe-buffer.md"/>
     </toc-element>
     <toc-element topic="technique.md">
+        <toc-element topic="bypass-permit-in-root.md"/>
         <toc-element topic="cross-cache.md"/>
         <toc-element topic="super-computer-tips.md"/>
         <toc-element topic="use-gpu-on-colab.md"/>
@@ -97,5 +98,7 @@
     </toc-element>
     <toc-element topic="srdnlen-ctf-2026.md"/>
     <toc-element topic="tkbctf-5.md"/>
+    <toc-element topic="8th-APAC-HPC-AI-Competition.md"/>
     <toc-element topic="Exploiting-the-LadyBird-Browser.md"/>
+    <toc-element topic="vibe-optimization-but-it-s-heuristic.md"/>
 </instance-profile>
