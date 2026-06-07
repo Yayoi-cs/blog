@@ -101,7 +101,7 @@ As an example of an attempt to solve part of this problem, GPT treats positional
 
 So what matter in real? While vibe-optimization, I faced on following things:
 - ignore the restriction mentioned in initial prompt, i.e., they ignored "do not change accuracy" restriction and showed result me as "perfect optimization with no accuracy destruct".
-- they are overly confident for their findings, i.e., they treated some findings as game-changer even it improved execution time for only 0.04 sec / oder 100x sec.
+- they are overly confident for their findings, i.e., they treated some findings as game-changer even it improved execution time for only 0.04 sec.
 
 This was too annoying. Furthermore, they become fucking slacker when the verification of their findings. Such something slacking off made me frustrating, even they know how they should do to resolve it.
 
