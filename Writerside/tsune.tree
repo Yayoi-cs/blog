@@ -101,4 +101,7 @@
     <toc-element topic="8th-APAC-HPC-AI-Competition.md"/>
     <toc-element topic="Exploiting-the-LadyBird-Browser.md"/>
     <toc-element topic="vibe-optimization-but-it-s-heuristic.md"/>
+    <toc-element topic="Dirty-Kernel-Stack.md"/>
+    <toc-element topic="Nightmare-of-the-physical-memory-corruption.md"/>
+    <toc-element topic="FreeBSD-Kernel-Address-Leaks.md"/>
 </instance-profile>
