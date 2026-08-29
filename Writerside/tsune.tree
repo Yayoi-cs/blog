@@ -104,4 +104,5 @@
     <toc-element topic="Dirty-Kernel-Stack.md"/>
     <toc-element topic="Nightmare-of-the-physical-memory-corruption.md"/>
     <toc-element topic="FreeBSD-Kernel-Address-Leaks.md"/>
+    <toc-element topic="linux-on-asus-expert-book-ultra.md"/>
 </instance-profile>
