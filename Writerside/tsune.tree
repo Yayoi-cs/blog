@@ -105,4 +105,6 @@
     <toc-element topic="Nightmare-of-the-physical-memory-corruption.md"/>
     <toc-element topic="FreeBSD-Kernel-Address-Leaks.md"/>
     <toc-element topic="linux-on-asus-expert-book-ultra.md"/>
+    <toc-element topic="DefCamp-CTF-2026.md"/>
+    <toc-element topic="securinets-CTF.md"/>
 </instance-profile>

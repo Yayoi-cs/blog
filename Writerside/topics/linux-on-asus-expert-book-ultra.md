@@ -112,7 +112,75 @@ makepkg -esi
 after reboot, exec `amixer -c 0 sset 'Speaker' on` to turn on the speaker
 
 ### GPU
-You can use xpu with
+You can use xpu
 
-### Japanese
-英語書いてgoogle translateに翻訳してもらいな
+i.e.,
+```py
+
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torchvision import datasets, transforms
+from torch.utils.data import DataLoader
+
+import matplotlib.pyplot as plt
+from tqdm import tqdm
+
+
+class SimpleCNN(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.conv_stack = nn.Sequential(
+            nn.Conv2d(1, 8, 3, padding=1),
+            nn.ReLU(),
+            nn.MaxPool2d(2),
+            nn.Conv2d(8, 16, 3, padding=1),
+            nn.ReLU(),
+            nn.MaxPool2d(2),
+        )
+        self.fc_stack = nn.Sequential(
+            nn.Flatten(),
+            nn.Linear(16 * 7 * 7, 64),
+            nn.ReLU(),
+            nn.Linear(64, 10),
+        )
+
+    def forward(self, x):
+        return self.fc_stack(self.conv_stack(x))
+
+
+assert(torch.xpu.is_available())
+device = torch.device("xpu")
+transform = transforms.ToTensor()
+
+train_data = datasets.MNIST(root="./data", train=True,  download=True, transform=transform)
+test_data  = datasets.MNIST(root="./data", train=False, download=True, transform=transform)
+
+train_loader = DataLoader(train_data, batch_size=2**8, shuffle=True)
+test_loader  = DataLoader(test_data,  batch_size=2**8, shuffle=False)
+
+model = SimpleCNN().to(device)
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=1e-3)
+
+EPOCHS = 100
+for epoch in range(EPOCHS):
+    model.train()
+    for images, labels in tqdm(train_loader, desc=f"Epoch {epoch+1}/{EPOCHS}"):
+        images, labels = images.to(device), labels.to(device)
+        optimizer.zero_grad()
+        loss = criterion(model(images), labels)
+        loss.backward()
+        optimizer.step()
+
+model.eval()
+correct = total = 0
+with torch.no_grad():
+    for images, labels in test_loader:
+        images, labels = images.to(device), labels.to(device)
+        preds = model(images).argmax(dim=1)
+        correct += (preds == labels).sum().item()
+        total += labels.size(0)
+print(f"Inference accuracy: {correct/total:.4f}")
+
+```
