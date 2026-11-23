@@ -13,7 +13,7 @@ Then, I found an interesting memory corruption in the Qt JavaScript Engine (V4).
 
 By using this memory corruption, I achieved 0-click RCE on Okular.
 
-<video src="2026-11-13 03-26-05.mp4" preview-src="videoframe_7667.png"></video>
+<video src="2026-11-13 03-26-05.mp4" preview-src="videoframe_7667.png"/>
 
 Qt doesn't accept V4 engine vulnerability triggered by malicious JavaScript. Therefore, I decided to write blog for this JS engine.
 
