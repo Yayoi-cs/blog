@@ -31,4 +31,16 @@
             <![CDATA[Created after removal of "<AI-doesn-t-have-its-heart-right.md>" from tsune]]></description>
         <accepts>AI-doesn-t-have-its-heart-right.html</accepts>
     </rule>
+    <rule id="25172d8e">
+        <description>Created after removal of "早生まれが持つべきマインド (20歳を迎える前に)" from tsune</description>
+        <accepts>早生まれが持つべきマインド-20歳を迎える前に.html</accepts>
+    </rule>
+    <rule id="59c9852b">
+        <description>Created after removal of "V4 JS RCE" from tsune</description>
+        <accepts>QJS-0-day-RCE.html</accepts>
+    </rule>
+    <rule id="1ee56e72">
+        <description>Created after removal of "Say fuck to your AI job script" from tsune</description>
+        <accepts>Say-fuck-to-AI-jobscript.html</accepts>
+    </rule>
 </rules>

@@ -107,4 +107,9 @@
     <toc-element topic="linux-on-asus-expert-book-ultra.md"/>
     <toc-element topic="DefCamp-CTF-2026.md"/>
     <toc-element topic="securinets-CTF.md"/>
+    <toc-element topic="House-of-Parakeet.md"/>
+    <toc-element topic="9th-APAC-HPC-AI-Competition.md"/>
+    <toc-element topic="Hotspot-RCE.md"/>
+    <toc-element topic="V4-RCE.md">
+    </toc-element>
 </instance-profile>
