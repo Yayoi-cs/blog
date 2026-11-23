@@ -195,7 +195,7 @@ Based on this, we used EPLB with a static placement to replicate frequently rout
 
 We also applied DP-attention to Prefill and increased the batch size as far as TTFT allowed, so Prefill could process more requests in parallel.
 
-We further fused multiple CUDA Graphs to reduce CUDA Graph launch overhead and tuned MegaMoE. Without a single kernel patch, we reached 7.8k goodput TPS.
+We further fused multiple CUDA Graphs to reduce CUDA Graph launch overhead and tuned MegaMoE. Without a single kernel patch, we reached 8.8k goodput TPS.
 
 ![](53.png)
 
